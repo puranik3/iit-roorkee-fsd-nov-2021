@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+}
+
+.banner {
+    padding: 0.1em;
+    text-align: center;
+    background-color: rgb( 75, 80, 75 );
+    color: white;
+}
