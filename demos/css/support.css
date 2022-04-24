@@ -1,0 +1,48 @@
+body {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.form-input-box {
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 0.8em 0;
+}
+
+.black-border {
+    border: 1px solid black;
+}
+
+header {
+    background-color: purple;
+    color: white;
+}
+
+header h1 {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.form-input-box label,
+.form-input-box input,
+.form-input-box select {
+    display: block;
+}
+
+.form-input-box input {
+    padding: 0.25em;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.form-input-box input:focus {
+    outline: none;
+}
+
+.form-input-box label {
+    font-weight: bold;
+}
+
+.required {
+    color: red;
+}

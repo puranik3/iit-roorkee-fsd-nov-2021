@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/external/normalize.css">
+        <link rel="stylesheet" href="css/support.css">
+    </head>
+    <body>
+        <main>
+            <header class="form-input-box">
+                <h1>Complaint Form</h1>
+                <div>
+                    Read below instructions before proceeding:
+                </div>
+                <div>
+                    Make sure you fill all the fields where * is provided
+                </div>
+            </header>
+        
+            <div class="form-input-box black-border">
+                <label for="name">
+                    Name
+                    <span class="required">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                />
+            </div>
+            
+            <div class="form-input-box black-border">
+                <label for="phone">
+                    Phone number
+                    <span class="required">*</span>
+                </label>
+                <input
+                    type="tel"
+                    id="name"
+                />
+            </div>
+            
+            <div class="form-input-box black-border">
+                <label for="email">
+                    Email address
+                    <span class="required">*</span>
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                />
+            </div>
+            
+            <div class="form-input-box black-border">
+                Address
+
+                <label for="house-number">
+                    H:no
+                    <span class="required">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="house-number"
+                />
+                
+                <label for="street">
+                    Street
+                    <span class="required">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="street"
+                />
+                
+                <label for="area">
+                    Area
+                    <span class="required">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="area"
+                />
+                
+                <label for="district">
+                    District
+                    <span class="required">*</span>
+                </label>
+                <select type="text" id="district">
+                    <option value="">Choose</option>
+                    <option value="Bangalore Urban">Bangalore Urban</option>
+                    <option value="Bangalore Rural">Bangalore Rural</option>
+                    <option value="Bangalore Ramnagar">Ramnagar</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </main>
+    </body>
+</html>
