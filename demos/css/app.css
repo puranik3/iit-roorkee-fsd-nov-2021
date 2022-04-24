@@ -3,8 +3,29 @@ body {
 }
 
 .banner {
+    position: relative;
     padding: 0.1em;
     text-align: center;
     background-color: rgb( 75, 80, 75 );
     color: white;
+}
+
+.banner-actions {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+}
+
+.banner-actions a {
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    text-decoration: none;
+    color: white;
+    font-size: 1.35em;
+    background-color: rgb( 160, 160, 160 );
+}
+
+.banner-actions a:hover {
+    background-color: black;
 }
