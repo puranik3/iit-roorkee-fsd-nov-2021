@@ -1,0 +1,37 @@
+* {
+    /* width setting will include space for border and padding areas */
+    box-sizing: border-box;
+}
+
+main {
+    width: 95%;
+    /* auto -> distribute the extra 5% space as left and right margins */
+    margin: 0 auto;
+}
+
+.news-item {
+    position: relative;
+    width: 18%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.news-item-image {
+    width: 100%;
+}
+
+.news-item-title {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 0.5em;
+    text-align: center;
+    background-color: rgba( 64, 64, 64, 0.5 );
+    color: white;
+}
+
+/* When we hover over the news item, the title within it shows up */
+.news-item:hover .news-item-title {
+    display: block;
+}
