@@ -31,6 +31,7 @@ body {
 }
 
 .menu {
+    overflow: auto;
     background-color: rgb( 119, 127, 119 );
 }
 
@@ -39,6 +40,14 @@ body {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.left-menu {
+    float: left;
+}
+
+.right-menu {
+    float: right;
 }
 
 .left-menu li,
