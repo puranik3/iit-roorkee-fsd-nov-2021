@@ -29,3 +29,32 @@ body {
 .banner-actions a:hover {
     background-color: black;
 }
+
+.menu {
+    background-color: rgb( 119, 127, 119 );
+}
+
+.left-menu,
+.right-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-menu li,
+.right-menu li {
+    display: inline-block;
+}
+
+.left-menu li a,
+.right-menu li a {
+    display: inline-block;
+    padding: 0.35em;
+    text-decoration: none;
+    color: white;
+}
+
+.left-menu li a:hover,
+.right-menu li a:hover {
+    background-color: black;
+}
