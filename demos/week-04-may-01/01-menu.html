@@ -23,6 +23,10 @@
 
             /* select menu and provide #777 as background color */
             .menu {
+                /* when the parent (body) scrolls, and this element is about to cross the top edge, it instead "sticks" */
+                position: -webkit-sticky; /* to support old Chrome, Safari, Opera browsers */
+                position: sticky;
+                top: 0px;
                 background-color: #777;
             }
 
