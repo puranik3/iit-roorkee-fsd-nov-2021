@@ -11,6 +11,7 @@
             }
 
             .background-video {
+                /* fixed with respect to the browser window - even if there is lot of content and body scrolls, this video will remain where it is in the window */
                 position: fixed;
                 top: 0px;
                 left: 0px;
@@ -24,11 +25,12 @@
                 border: 1px solid white;
                 border-radius: 1em;
             }
-
+            
             input {
                 width: 100%;
                 margin: 0.25em 0;
                 padding: 0.5em;
+                border: 0;
                 font-size: 1.5em;
             }
 
