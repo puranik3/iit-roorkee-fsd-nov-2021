@@ -50,15 +50,30 @@
             }
 
             .sub-menu-group {
+                display: none;
                 position: absolute;
+                top: 100%;
                 background-color: white;
                 padding: 0;
                 margin: 0;
                 list-style-type: none;
             }
 
+            /* The .sub-menu-group which is within the .sub-menu-group-container over which the user is hovering is to be shown */
+            .sub-menu-group-container:hover .sub-menu-group {
+                display: block;
+            }
+
             .sub-menu-group > li a {
+                display: inline-block;
+                width: 120px;
+                padding: 0.5em;
                 color: black;
+            }
+            
+            .sub-menu-group > li:hover a {
+                background-color: black;
+                color: white;
             }
         </style>
     </head>
@@ -89,8 +104,22 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Link3 </a>
+                <li class="sub-menu-group-container">
+                    <a href="#">Link 3</a>
+                    <ul class="sub-menu-group">
+                        <li>
+                            <a href="#">Link 3.1</a>
+                        </li>
+                        <li>
+                            <a href="#">Link 3.2</a>
+                        </li>
+                        <li>
+                            <a href="#">Link 3.3</a>
+                        </li>
+                        <li>
+                            <a href="#">Link 3.4</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
