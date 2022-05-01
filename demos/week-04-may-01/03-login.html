@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login page</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .background-video {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                z-index: -1;
+            }
+
+            .form {
+                width: 40%;
+                padding: 1em;
+                border: 1px solid white;
+                border-radius: 1em;
+            }
+
+            input {
+                width: 100%;
+                margin: 0.25em 0;
+                padding: 0.5em;
+                font-size: 1.5em;
+            }
+
+            input:focus {
+                opacity: 0.5;
+                background-color: rgba( 192, 192, 192, 0.5 );
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <form class="form">
+                <h2>Login</h2>
+                <hr />
+                <div>
+                    <input type="text" placeholder="Full name" />
+                </div>
+                <div>
+                    <input type="text" placeholder="Contact Number" />
+                </div>
+                <div>
+                    <input type="text" placeholder="Email ID" />
+                </div>
+            </form>
+        </main>
+
+        <video class="background-video" autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+        </video>
+    </body>
+</html>
