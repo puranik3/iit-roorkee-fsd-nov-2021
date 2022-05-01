@@ -11,6 +11,19 @@
                 box-sizing: border-box;
             }
 
+            body {
+                margin: 0;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+            }
+
             .barchart {
                 display: inline-block;
                 height: 400px;
@@ -36,6 +49,7 @@
 
             .bar-inner-1 {
                 animation: grow-1 1.5s forwards;
+                animation-delay: 0s;
             }
 
             @keyframes grow-1 {
@@ -45,6 +59,7 @@
             
             .bar-inner-2 {
                 animation: grow-2 1.5s forwards;
+                animation-delay: 1.5s;
             }
 
             @keyframes grow-2 {
@@ -53,26 +68,30 @@
             }
             
             .bar-inner-3 {
-                animation: grow-3 1.5s forwards;
+                animation: grow-3 2.5s forwards;
+                animation-delay: 3s;
             }
 
             @keyframes grow-3 {
-                0% { height: 0%; }
-                100% { height: 80%; }
+                from { height: 0%; }
+                to { height: 80%; }
             }
         </style>
     </head>
     <body>
-        <div class="barchart">
-            <div class="bar">
-                <div class="bar-inner bar-inner-1"></div>
+        <main>
+            <div class="barchart">
+                <div class="bar">
+                    <div class="bar-inner bar-inner-1"></div>
+                </div>
+                <div class="bar">
+                    <div class="bar-inner bar-inner-2"></div>
+                </div>
+                <div class="bar">
+                    <div class="bar-inner bar-inner-3"></div>
+                </div>
             </div>
-            <div class="bar">
-                <div class="bar-inner bar-inner-2"></div>
-            </div>
-            <div class="bar">
-                <div class="bar-inner bar-inner-3"></div>
-            </div>
-        </div>
+            <h2>Bar chart</h2>
+        </main>
     </body>
 </html>
