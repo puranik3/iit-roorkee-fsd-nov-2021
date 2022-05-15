@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic calculator</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="input-box"></div>
+            <div class="buttons-list">
+                <button class="button" onclick="cancel()">C</button>
+                <button class="button" onclick="displaySymbol( event )">(</button>
+                <button class="button" onclick="displaySymbol( event )">)</button>
+                <button class="button" onclick="backspace()">&larr;</button>
+                
+                <button class="button">+/-</button>
+                <button class="button" onclick="displaySymbol( event )">7</button>
+                <button class="button" onclick="displaySymbol( event )">8</button>
+                <button class="button" onclick="displaySymbol( event )">9</button>
+                
+                <button class="button" onclick="displaySymbol( event )">/</button>
+                <button class="button" onclick="displaySymbol( event )">4</button>
+                <button class="button" onclick="displaySymbol( event )">5</button>
+                <button class="button" onclick="displaySymbol( event )">6</button>
+                
+                <button class="button" onclick="displaySymbol( event )">*</button>
+                <button class="button" onclick="displaySymbol( event )">1</button>
+                <button class="button" onclick="displaySymbol( event )">2</button>
+                <button class="button" onclick="displaySymbol( event )">3</button>
+                
+                <button class="button" onclick="displaySymbol( event )">+</button>
+                <button class="button" onclick="displaySymbol( event )">0</button>
+                <button class="button" onclick="displaySymbol( event )">.</button>
+                <button class="button" onclick="calculate()">=</button>
+                
+                <button class="button" onclick="displaySymbol( event )">-</button>
+                <button class="button" onclick="">sqrt</button>
+                <button class="button" onclick="">sq</button>
+                <button class="button" onclick="">exp</button>
+                
+                <button class="button" onclick="">ln</button>
+                <button class="button" onclick="">cos</button>
+                <button class="button" onclick="">sin</button>
+                <button class="button" onclick="">tan</button>
+                
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
