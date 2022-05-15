@@ -27,6 +27,12 @@ function calculate() {
 }
 
 function isNumber( expr ) {
+    // ^ - match from the beginning of expr
+    // $ - match till the end of expr
+    // ? - preceding character may or may not be present (optional)
+    // \d - a digit
+    // \. - a dot
+    // () for grouping set of characters
     const numPat = /^-?\d+(\.\d+)?$/;
     return numPat.test( expr );
 }
@@ -42,5 +48,73 @@ function changeSign() {
             // change to minus
             inputBox.innerText = '-' + currentText;
         }
+    }
+}
+
+function sqrt() {
+    const currentText = inputBox.innerText;
+
+    if( isNumber( currentText ) ) {
+        // best to create isNegative() / isPositive() helper
+        if( currentText[0] !== '-' ) {
+            inputBox.innerText = Math.sqrt( currentText );
+        }
+    }
+}
+
+function sq() {
+    // display square of the number
+    const currentText = inputBox.innerText;
+    
+    if( isNumber( currentText ) ) {
+        inputBox.innerText = inputBox.innerText * inputBox.innerText;
+    }
+}
+
+function exp() {
+    // display e^currentText (Math.exp)
+    const currentText = inputBox.innerText;
+
+    if( isNumber( currentText ) ) {
+        inputBox.innerText = Math.exp( currentText );
+    }
+}
+
+// check currentText is not negative
+function ln() {
+    // use Math.log() // base is e=2.72 in Math.log()
+    const currentText = inputBox.innerText;
+
+    if( isNumber( currentText ) ) {
+        if( currentText[0] !== '-' ) {
+            inputBox.innerText = Math.log( currentText );
+        }
+    }
+}
+
+function cos() {
+    // use Math.cos()
+    const currentText = inputBox.innerText;
+
+    if( isNumber( currentText ) ) {
+        inputBox.innerText = Math.cos( currentText );
+    }
+}
+
+function sin() {
+    // use Math.sin()
+    const currentText = inputBox.innerText;
+
+    if( isNumber( currentText ) ) {
+        inputBox.innerText = Math.sin( currentText );
+    }
+}
+
+function tan() {
+    // use Math.tan()
+    const currentText = inputBox.innerText;
+
+    if( isNumber( currentText ) ) {
+        inputBox.innerText = Math.tan( currentText );
     }
 }
