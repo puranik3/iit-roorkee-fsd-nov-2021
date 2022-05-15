@@ -12,10 +12,16 @@ function displaySymbol( event ) {
 
 function cancel() {
     // clear the input-box
+    const inputBox = document.querySelector( '.input-box' );
+    inputBox.innerText = '';
 }
 
 function backspace() {
     // use substring() function on the input-box innerText
+    const inputBox = document.querySelector( '.input-box' );
+    const currentText = inputBox.innerText;
+    const newText = currentText.substring( 0, currentText.length - 1 );
+    inputBox.innerText = newText;
 }
 
 function calculate() {
