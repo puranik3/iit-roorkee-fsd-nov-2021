@@ -5,41 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Basic calculator</title>
-        <style>
-            body {
-                height: 100vh; /* viewport height */
-                margin: 0;
-                display: flex;
-                justify-content: center; /* horizontal centering of child (calculator) */
-                align-items: center; /* vertical centering of child (calculator) */
-            }
-
-            .calculator {
-                width: 400px;
-                padding: 0.5em;
-                border: 1px solid #333;
-                border-radius: 5px;
-            }
-
-            .input-box {
-                font-size: 2em;
-                line-height: 2.25;
-                text-align: right;
-            }
-
-            .buttons-list {
-                display: flex;
-                flex-wrap: wrap;
-                width: 400px;
-            }
-
-            .button {
-                flex-basis: 100px;
-                flex-grow: 0;
-                flex-shrink: 0;
-                height: 100px;
-            }
-        </style>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <div class="calculator">
@@ -48,7 +14,7 @@
                 <button class="button">C</button>
                 <button class="button">/</button>
                 <button class="button">*</button>
-                <button class="button">Backspace</button>
+                <button class="button">&larr;</button>
                 
                 <button class="button">7</button>
                 <button class="button">8</button>
