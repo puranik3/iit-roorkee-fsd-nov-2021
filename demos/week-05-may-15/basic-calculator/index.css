@@ -14,6 +14,7 @@ body {
 }
 
 .input-box {
+    height: 68px; /* 16px * 2 * 2.25 */
     font-size: 2em;
     line-height: 2.25;
     text-align: right;
