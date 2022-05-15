@@ -11,10 +11,10 @@
         <div class="calculator">
             <div class="input-box"></div>
             <div class="buttons-list">
-                <button class="button">C</button>
+                <button class="button" onclick="cancel()">C</button>
                 <button class="button" onclick="displaySymbol( event )">/</button>
                 <button class="button" onclick="displaySymbol( event )">*</button>
-                <button class="button">&larr;</button>
+                <button class="button" onclick="backspace()">&larr;</button>
                 
                 <button class="button" onclick="displaySymbol( event )">7</button>
                 <button class="button" onclick="displaySymbol( event )">8</button>
@@ -34,7 +34,7 @@
                 <button class="button" onclick="displaySymbol( event )">(</button>
                 <button class="button" onclick="displaySymbol( event )">0</button>
                 <button class="button" onclick="displaySymbol( event )">)</button>
-                <button class="button">=</button>
+                <button class="button" onclick="calculate()">=</button>
             </div>
         </div>
 
