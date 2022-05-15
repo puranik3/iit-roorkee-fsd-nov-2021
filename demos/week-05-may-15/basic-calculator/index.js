@@ -1,7 +1,11 @@
 function displaySymbol( event ) {
-    const button = event.target; // button that was clicked
-    const buttonText = event.target.innerText; // the text within the button
+    // button that was clicked
+    const button = event.target;
 
-    // put this text in the .input-box
-    // exercise
+    // the text within the button
+    const buttonText = event.target.innerText;
+
+    // put this text in the .input-box (use querySelector)
+    const inputBox = document.querySelector( '.input-box' );
+    inputBox.innerText += buttonText;
 }
