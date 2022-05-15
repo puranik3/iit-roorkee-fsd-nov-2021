@@ -1,3 +1,5 @@
+const inputBox = document.querySelector( '.input-box' );
+
 function displaySymbol( event ) {
     // button that was clicked
     const button = event.target;
@@ -6,24 +8,39 @@ function displaySymbol( event ) {
     const buttonText = button.innerText;
 
     // put this text in the .input-box (use querySelector)
-    const inputBox = document.querySelector( '.input-box' );
     inputBox.innerText = inputBox.innerText + buttonText;
 }
 
 function cancel() {
-    const inputBox = document.querySelector( '.input-box' );
     inputBox.innerText = '';
 }
 
 function backspace() {
-    const inputBox = document.querySelector( '.input-box' );
     const currentText = inputBox.innerText;
     const newText = currentText.substring( 0, currentText.length - 1 );
     inputBox.innerText = newText;
 }
 
 function calculate() {
-    const inputBox = document.querySelector( '.input-box' );
     const expr = inputBox.innerText;
     inputBox.innerText = eval( expr );
+}
+
+function isNumber( expr ) {
+    const numPat = /^-?\d+(\.\d+)?$/;
+    return numPat.test( expr );
+}
+
+function changeSign() {
+    const currentText = inputBox.innerText;
+    
+    if( isNumber( currentText ) ) {
+        if( currentText[0] === '-' ) {
+            // change from minus to plus (drop the minus symbol)
+            inputBox.innerText = currentText.substring( 1 );
+        } else {
+            // change to minus
+            inputBox.innerText = '-' + currentText;
+        }
+    }
 }
