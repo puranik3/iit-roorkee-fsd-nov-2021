@@ -4,6 +4,7 @@ function Person( name, age, emails ) {
     this.emails = emails;
 }
 
+// methods
 Person.prototype.celebrateBirthday = function() {
     this.age++;
 };
