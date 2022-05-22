@@ -48,7 +48,11 @@ function loadQuestion() {
 function handleSelect( id, choice ) {
     console.log( id, choice );
 
-    // we set up event handler 
+    // we set up event handler
+    document.getElementById( id ).addEventListener( 'click', function() {
+        quiz.checkOptionWithAnswer( choice );
+        loadQuestion();
+    });
 }
 
 const questions = [
