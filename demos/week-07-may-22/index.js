@@ -8,17 +8,6 @@ Question.prototype.isCorrectAnswer = function( answer ) {
     return this.answer === answer;
 };
 
-/**
- * EXERCISE
- * Create the Quiz class
- * - questions (input in constructor - array of questions)
- * - score (initially 0)
- * - questionIndex (initially 0) - represents the index of the current question in the questions array
- * 
- * Methods
- * getCurrentQuestion - return the question object for questionIndex
- * checkOptionWithAnswer - answer is checked against correct answer of current question - true of false is returned - please use the question object's isCorrectAnswer method
- */
 function Quiz( questions ) {
     this.questions = questions;
     this.score = 0;
@@ -30,8 +19,37 @@ Quiz.prototype.getCurrentQuestion = function() {
 };
 
 Quiz.prototype.checkOptionWithAnswer = function( answer ) {
-    return this.getCurrentQuestion().isCorrectAnswer( answer );
+    if( this.getCurrentQuestion().isCorrectAnswer( answer ) ) {
+        this.score++;
+    }
+
+    this.questionIndex++;
 };
+
+Quiz.prototype.done = function() {
+    return this.questionIndex >= this.questions.length;
+};
+
+function loadQuestion() {
+    const currentQuestion = quiz.getCurrentQuestion();
+    // get the DOM node for the question and set the question in it
+    const questionEl = document.getElementById( 'question' );
+    questionEl.textContent = currentQuestion.text;
+
+    // loop through choices for the question and get the choice elements in the UI, and populate the choices
+    for( let i = 0; i < currentQuestion.choices.length; i++ ) {
+        const currentChoice = currentQuestion.choices[i];
+
+        document.getElementById( 'choice' + i ).textContent = currentChoice;
+        handleSelect( 'btn' + i, currentChoice )
+    }
+}
+
+function handleSelect( id, choice ) {
+    console.log( id, choice );
+
+    // we set up event handler 
+}
 
 const questions = [
     new Question("JavaScript supports", ["Functions", "XHTML","CSS", "HTML"], "Functions"),
@@ -41,15 +59,16 @@ const questions = [
     new Question("JavaScript is a ", ["Language", "Programming Language", "Development", "All"], "Programming Language")
 ];
 
-console.log( questions );
+// console.log( questions );
 
 // If implemented correctly this should be the output
-console.log( questions[0].isCorrectAnswer( "Functions" ) ); // true
-console.log( questions[0].isCorrectAnswer( "CSS" ) ); // false
+// console.log( questions[0].isCorrectAnswer( "Functions" ) ); // true
+// console.log( questions[0].isCorrectAnswer( "CSS" ) ); // false
 
 const quiz = new Quiz( questions );
-console.log( quiz );
+loadQuestion();
+// console.log( quiz );
 
-console.log( quiz.getCurrentQuestion() );
-console.log( quiz.checkOptionWithAnswer( 'Functions' ) ); // true
-console.log( quiz.checkOptionWithAnswer( 'CSS' ) ); // false
+// console.log( quiz.getCurrentQuestion() );
+// console.log( quiz.checkOptionWithAnswer( 'Functions' ) ); // true
+// console.log( quiz.checkOptionWithAnswer( 'CSS' ) ); // false
