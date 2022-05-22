@@ -1,7 +1,7 @@
-function Person( name, age ) {
+function Person( name, age, emails ) {
     this.name = name;
     this.age = age;
-    this.emails = [];
+    this.emails = emails;
 }
 
 Person.prototype.celebrateBirthday = function() {
@@ -12,8 +12,8 @@ Person.prototype.addEmail = function( email ) {
     this.emails.push( email );
 };
 
-const john = new Person( 'John', 32 );
-const jane = new Person( 'Jane', 28 );
+const john = new Person( 'John', 32, [] );
+const jane = new Person( 'Jane', 28, [ 'jane@gmail.com' ] );
 
 john.celebrateBirthday();
 jane.addEmail( 'jane@example.com' );
