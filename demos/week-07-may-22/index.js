@@ -31,6 +31,11 @@ Quiz.prototype.done = function() {
 };
 
 function loadQuestion() {
+    if( quiz.done() ) {
+        showScore();
+        return;
+    }
+
     const currentQuestion = quiz.getCurrentQuestion();
     // get the DOM node for the question and set the question in it
     const questionEl = document.getElementById( 'question' );
@@ -43,16 +48,30 @@ function loadQuestion() {
         document.getElementById( 'choice' + i ).textContent = currentChoice;
         handleSelect( 'btn' + i, currentChoice )
     }
+
+    showProgress(); // define this function to show the progress
 }
 
 function handleSelect( id, choice ) {
     console.log( id, choice );
 
     // we set up event handler
-    document.getElementById( id ).addEventListener( 'click', function() {
+    // onclick will replace the old event handler for the button, and set up the new one (else multiple handlers get set up since we add a handler in each step of the quiz)
+    document.getElementById( id ).onclick = function() {
         quiz.checkOptionWithAnswer( choice );
         loadQuestion();
-    });
+    };
+}
+
+function showProgress () {
+    document.getElementById( 'progress' ).textContent = `Question ${quiz.questionIndex + 1} of ${quiz.questions.length}`;
+}
+
+function showScore() {
+    document.getElementById( 'quiz' ).innerHTML = `
+        <h1>Result</h1>
+        <h2 id="score">You scored ${quiz.score}</h2>
+    `;
 }
 
 const questions = [
