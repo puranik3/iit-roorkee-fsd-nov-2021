@@ -11,3 +11,4 @@
 4. Show categories
 5. Show list of items in every category
 6. Download and include FontAwesome from https://fontawesome.com/download (Use Free For Web)
+7. Provide CSS for the food items / categories
