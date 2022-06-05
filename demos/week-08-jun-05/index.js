@@ -27,7 +27,9 @@ const showItemsByCategory = () => {
                                 <i class="fa-solid fa-star"> ${item.rating}</i>
                                 <i class="fa-solid fa-heart"></i>
                             </div>
-                            ${item.name}
+                            <img src="${item.img}" alt="${item.name}" />
+                            <div>${item.name}</div>
+                            <div>Price: $${item.price}</div>
                         </div>
                     `
                 }

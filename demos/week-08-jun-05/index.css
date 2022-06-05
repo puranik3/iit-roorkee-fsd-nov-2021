@@ -1,0 +1,23 @@
+.category {
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.category h3 {
+    font-size: 2em;
+    color: rgb( 255, 127, 79 )
+}
+
+.category-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    flex-basis: 18%;
+}
+
+.category-item img {
+    width: 180px;
+}
