@@ -11,5 +11,18 @@ const categoriesSet = new Set( categoriesArrayDuplicates );
 // array of categories without duplicates
 const categories = Array.from( categoriesSet );
 
-console.log( filterByCategory( 'biryani' ) );
-console.log( filterByCategory( 'paneer' ) );
+const showItemsByCategory = () => {
+    const main = document.querySelector( '.main' );
+
+    categories.forEach(
+        category => {
+            main.innerHTML += `
+                <section class="category-items">
+                    <h3>${category}</h3>
+                </section>
+            `
+        }
+    )
+}
+
+showItemsByCategory();
