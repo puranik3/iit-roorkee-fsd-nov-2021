@@ -22,7 +22,11 @@ const showItemsByCategory = () => {
             filterByCategory( category ).forEach(
                 item => {
                     itemsHTML += `
-                        <div>
+                        <div class="category-item">
+                            <div>
+                                <i class="fa-solid fa-star"> ${item.rating}</i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
                             ${item.name}
                         </div>
                     `

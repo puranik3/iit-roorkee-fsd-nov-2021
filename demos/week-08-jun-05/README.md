@@ -10,3 +10,4 @@
 3. Create a helper that returns a list of items in a category
 4. Show categories
 5. Show list of items in every category
+6. Download and include FontAwesome
