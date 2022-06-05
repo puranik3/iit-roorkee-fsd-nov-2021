@@ -23,7 +23,7 @@ const showItemsByCategory = () => {
                 item => {
                     itemsHTML += `
                         <div class="category-item">
-                            <div>
+                            <div class="category-item-actions">
                                 <i class="fa-solid fa-star"> ${item.rating}</i>
                                 <i class="fa-solid fa-heart"></i>
                             </div>
