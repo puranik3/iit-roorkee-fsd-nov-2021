@@ -16,9 +16,25 @@ const showItemsByCategory = () => {
 
     categories.forEach(
         category => {
+            let itemsHTML = '';
+
+            // form a list of divs for items in this category (itemsHTML)
+            filterByCategory( category ).forEach(
+                item => {
+                    itemsHTML += `
+                        <div>
+                            ${item.name}
+                        </div>
+                    `
+                }
+            );
+
+            console.log( itemsHTML );
+
             main.innerHTML += `
                 <section class="category-items">
                     <h3>${category}</h3>
+                    <div class="category-items">${itemsHTML}</div>
                 </section>
             `
         }
