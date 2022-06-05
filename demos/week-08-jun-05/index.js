@@ -31,8 +31,9 @@ const showItemsByCategory = () => {
 
             console.log( itemsHTML );
 
+            // render HTML for a category and its items
             main.innerHTML += `
-                <section class="category-items">
+                <section class="category">
                     <h3>${category}</h3>
                     <div class="category-items">${itemsHTML}</div>
                 </section>
