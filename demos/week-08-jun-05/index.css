@@ -57,3 +57,7 @@
 .curved-button {
     border-radius: 20px;
 }
+
+.d-none {
+    display: none;
+}

@@ -62,9 +62,12 @@ showItemsByCategory();
 
 function bindListeners() {
     const addItemToCartButtons = document.querySelectorAll( '.add-item-to-cart' );
-    const cartButton = document.querySelector( '.cart-items-count' );
+    const cartButton = document.querySelector( '.items' );
     const addressButton = document.querySelector( '.address' );
     const addressInner = document.querySelector( '.address-inner' );
+    const mainPage = document.querySelector( '.main' );
+    const cartPage = document.querySelector( '.cart' );
+
 
     // console.log( addItemToCartButtons );
 
@@ -110,6 +113,16 @@ function bindListeners() {
         }
 
         addressInner.textContent = address;
+    });
+
+    cartButton.addEventListener( 'click', function() {
+        if( mainPage.classList.contains( 'd-none' ) ) {
+            cartPage.classList.add( 'd-none' );
+            mainPage.classList.remove( 'd-none' )
+        } else {
+            cartPage.classList.remove( 'd-none' );
+            mainPage.classList.add( 'd-none' )
+        }
     });
 }
 
