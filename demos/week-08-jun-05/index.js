@@ -1,6 +1,6 @@
 import { foodItems } from './food-items.js';
 
-const cart = [];
+let cart = [];
 
 const filterByCategory = ( category ) => {
     return foodItems.filter( item => item.category === category );
@@ -60,6 +60,53 @@ const showItemsByCategory = () => {
 
 showItemsByCategory();
 
+function showCart() {
+    const cartTBody = document.querySelector( '.cart tbody' );
+
+    // populate the cart table rows
+    cartTBody.innerHTML = '';
+
+    cart.forEach(
+        cartItem => {
+            const { item, qty } = cartItem;
+
+            cartTBody.innerHTML += `
+                <tr>
+                    <td>
+                        <img src="${item.img}" alt="${item.name}" class="cart-item-image" />
+                    </td>
+                    <td>${item.name}</td>
+                    <td>
+                        <button class="cart-item cart-item-decrease" onclick="decreaseQty( ${item.id} )">-</button>
+                        ${qty}
+                        <button class="cart-item-increase" onclick="increaseQty( ${item.id} )">+</button>
+                    </td>
+                    <td>$${item.price}</td>
+                </tr>
+            `;
+        }
+    )
+}
+
+function increaseQty( itemId ) {
+    findItemInCart( itemId ).qty++;
+    showCart();
+}
+
+function decreaseQty( itemId ) {
+    const item = findItemInCart( itemId )
+    item.qty--;
+    
+    if( item.qty === 0 ) {
+        cart = cart.filter( i => i.item.id !== itemId );
+    }
+    
+    showCart();
+}
+
+window.increaseQty = increaseQty;
+window.decreaseQty = decreaseQty;
+
 function bindListeners() {
     const addItemToCartButtons = document.querySelectorAll( '.add-item-to-cart' );
     const cartButton = document.querySelector( '.items' );
@@ -68,7 +115,6 @@ function bindListeners() {
     const addressInner = document.querySelector( '.address-inner' );
     const mainPage = document.querySelector( '.main' );
     const cartPage = document.querySelector( '.cart' );
-    const cartTBody = document.querySelector( '.cart tbody' );
 
     // console.log( addItemToCartButtons );
 
@@ -102,29 +148,7 @@ function bindListeners() {
 
                 cartCount.innerText = cart.length;
 
-                // populate the cart table rows
-                cartTBody.innerHTML = '';
-
-                cart.forEach(
-                    cartItem => {
-                        const { item, qty } = cartItem;
-
-                        cartTBody.innerHTML += `
-                            <tr>
-                                <td>
-                                    <img src="${item.img}" alt="${item.name}" class="cart-item-image" />
-                                </td>
-                                <td>${item.name}</td>
-                                <td>
-                                    <button class="cart-item-decrease">-</button>
-                                    ${qty}
-                                    <button class="cart-item-increase">+</button>
-                                </td>
-                                <td>$${item.price}</td>
-                            </tr>
-                        `;
-                    }
-                )
+                showCart();
             });
         }
     )
