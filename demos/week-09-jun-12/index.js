@@ -44,3 +44,9 @@ function getFormattedDate( date ) {
 
     return `${days[date.getDay()]} ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 }
+
+document.querySelector( '.search-box' ).addEventListener( 'keypress', function( event ) {
+    if( event.key === 'Enter' ) {
+        getWeather( this.value );
+    }
+});
