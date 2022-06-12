@@ -63,11 +63,11 @@ showItemsByCategory();
 function bindListeners() {
     const addItemToCartButtons = document.querySelectorAll( '.add-item-to-cart' );
     const cartButton = document.querySelector( '.items' );
+    const cartCount = document.querySelector( '.cart-items-count' );
     const addressButton = document.querySelector( '.address' );
     const addressInner = document.querySelector( '.address-inner' );
     const mainPage = document.querySelector( '.main' );
     const cartPage = document.querySelector( '.cart' );
-
 
     // console.log( addItemToCartButtons );
 
@@ -99,7 +99,7 @@ function bindListeners() {
                     });
                 }
 
-                cartButton.innerText = cart.length;
+                cartCount.innerText = cart.length;
             });
         }
     )
@@ -116,10 +116,16 @@ function bindListeners() {
     });
 
     cartButton.addEventListener( 'click', function() {
+        // Check the use of classList.toggle()
         if( mainPage.classList.contains( 'd-none' ) ) {
             cartPage.classList.add( 'd-none' );
             mainPage.classList.remove( 'd-none' )
         } else {
+            if( cart.length === 0 ) {
+                alert( 'No items in the cart' );
+                return;
+            }
+
             cartPage.classList.remove( 'd-none' );
             mainPage.classList.add( 'd-none' )
         }
