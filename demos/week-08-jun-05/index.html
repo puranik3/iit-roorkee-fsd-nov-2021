@@ -39,7 +39,21 @@
             </nav>
             <div class="left-sidebar">Sidebar</div>
             <div class="main"></div>
-            <div class="cart d-none">Cart</div>
+            <div class="cart d-none">
+                <h2>Cart items</h2>
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button class="checkout nav-action-button curved-button checkout-button">Checkout</button>
+            </div>
             <div class="right-sidebar"></div>
         </main>
         <script src="index.js" type="module"></script>

@@ -61,3 +61,21 @@
 .d-none {
     display: none;
 }
+
+.cart-table {
+    width: 100%;
+}
+
+.cart-table td {
+    text-align: center;
+}
+
+.cart-item-image {
+    width: 120px;
+}
+
+.checkout-button {
+    padding: 1em;
+    background-color: #a00000;
+    color: white;
+}

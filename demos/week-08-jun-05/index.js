@@ -68,6 +68,7 @@ function bindListeners() {
     const addressInner = document.querySelector( '.address-inner' );
     const mainPage = document.querySelector( '.main' );
     const cartPage = document.querySelector( '.cart' );
+    const cartTBody = document.querySelector( '.cart tbody' );
 
     // console.log( addItemToCartButtons );
 
@@ -100,6 +101,30 @@ function bindListeners() {
                 }
 
                 cartCount.innerText = cart.length;
+
+                // populate the cart table rows
+                cartTBody.innerHTML = '';
+
+                cart.forEach(
+                    cartItem => {
+                        const { item, qty } = cartItem;
+
+                        cartTBody.innerHTML += `
+                            <tr>
+                                <td>
+                                    <img src="${item.img}" alt="${item.name}" class="cart-item-image" />
+                                </td>
+                                <td>${item.name}</td>
+                                <td>
+                                    <button class="cart-item-decrease">-</button>
+                                    ${qty}
+                                    <button class="cart-item-increase">+</button>
+                                </td>
+                                <td>$${item.price}</td>
+                            </tr>
+                        `;
+                    }
+                )
             });
         }
     )
