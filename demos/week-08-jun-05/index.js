@@ -71,6 +71,8 @@ function bindListeners() {
                 // the button (icon) which was clicked
                 // console.log( this );
 
+                this.classList.add( 'fa-heart-selected' );
+
                 const itemEl = this.closest( '.category-item' );
                 // console.log( itemEl );
 

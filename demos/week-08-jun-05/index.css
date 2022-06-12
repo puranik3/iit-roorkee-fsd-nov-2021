@@ -34,3 +34,25 @@
     display: flex;
     justify-content: space-between;
 }
+
+.fa-heart-selected {
+    color: crimson;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;;
+}
+
+.nav-action-button {
+    display: inline-block;
+    padding: 0.5em;
+    border: 1px solid #b00000;
+    border-radius: 4px;
+    margin-left: 1em;
+    color: #b00000;
+}
+
+.curved-button {
+    border-radius: 20px;
+}
