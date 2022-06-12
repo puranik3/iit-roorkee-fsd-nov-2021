@@ -41,7 +41,7 @@
 
 .menu {
     display: flex;
-    justify-content: space-between;;
+    justify-content: space-between;
 }
 
 .nav-action-button {
@@ -51,6 +51,7 @@
     border-radius: 4px;
     margin-left: 1em;
     color: #b00000;
+    cursor: pointer;
 }
 
 .curved-button {
