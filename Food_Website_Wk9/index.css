@@ -1,0 +1,36 @@
+.category {
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.category h3 {
+    font-size: 2em;
+    color: rgb( 255, 127, 79 );
+    text-transform: capitalize;
+}
+
+.category-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    flex-basis: 18%;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin: 1em 1%;
+    background-color: rgb( 252, 221, 226 );
+    text-align: center;
+}
+
+.category-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.category-item-actions {
+    display: flex;
+    justify-content: space-between;
+}
