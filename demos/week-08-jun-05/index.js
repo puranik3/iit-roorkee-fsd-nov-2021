@@ -25,6 +25,26 @@ const categoriesSet = new Set( categoriesArrayDuplicates );
 // array of categories without duplicates
 const categories = Array.from( categoriesSet );
 
+const showCategories = () => {
+    const categoriesList = document.querySelector( '.categories-list' );
+
+    categoriesList.innerHTML = '';
+
+    categories.forEach(
+        category => {
+            const items = filterByCategory( category );
+            const itemImg = items[0].img;
+
+            categoriesList.innerHTML += `
+                <div>
+                    <img src="${itemImg}" />
+                    <a href="#${category}">${category}</a>
+                </div>
+            `;
+        }
+    )
+};
+
 const showItemsByCategory = () => {
     const main = document.querySelector( '.main' );
 
@@ -53,7 +73,7 @@ const showItemsByCategory = () => {
 
             // render HTML for a category and its items
             main.innerHTML += `
-                <section class="category">
+                <section class="category" id="${category}">
                     <h3>${category}</h3>
                     <div class="category-items">${itemsHTML}</div>
                 </section>
@@ -63,6 +83,7 @@ const showItemsByCategory = () => {
 }
 
 showItemsByCategory();
+showCategories();
 
 function showCart() {
     const cartTBody = document.querySelector( '.cart tbody' );

@@ -87,11 +87,14 @@
 
 .left-sidebar,
 .right-sidebar {
+    /* 0 0 -> do not grow, do not shrink */
     flex: 0 0 180px;
     margin-top: 2.5em;
 }
 
 .main-or-cart {
+    /* auto makes the item take all remaining width */
+    /* 1 0 -> grow if there is any space, but do not shrink */
     flex: 1 0 auto;
 }
 
@@ -107,4 +110,16 @@
 .left-sidebar-item a {
     text-decoration: none;
     color: #444;
+}
+
+.categories-list img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.categories-list > div {
+    display: flex;
+    align-items: center;
 }
