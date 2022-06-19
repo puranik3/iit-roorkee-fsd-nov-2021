@@ -12,7 +12,11 @@ const findById = ( itemId ) => {
 
 const findItemInCart = ( itemId ) => {
     return cart.find( cartItem => cartItem.item.id === itemId );
-}
+};
+
+const getCartTotal = () => {
+    return cart.reduce( ( acc, cartItem ) => acc + cartItem.qty * cartItem.item.price, 0 );
+};
 
 // array of categories with duplicates
 const categoriesArrayDuplicates = foodItems.map( item => item.category );
@@ -91,6 +95,8 @@ function showCart() {
 function increaseQty( itemId ) {
     findItemInCart( itemId ).qty++;
     showCart();
+
+    console.log( getCartTotal() );
 }
 
 function decreaseQty( itemId ) {
@@ -149,6 +155,8 @@ function bindListeners() {
                 cartCount.innerText = cart.length;
 
                 showCart();
+
+                console.log( 'total = ', getCartTotal() );
             });
         }
     )

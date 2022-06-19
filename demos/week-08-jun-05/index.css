@@ -79,3 +79,32 @@
     background-color: #a00000;
     color: white;
 }
+
+.sidebar-and-content {
+    width: 100%;
+    display: flex;
+}
+
+.left-sidebar,
+.right-sidebar {
+    flex: 0 0 180px;
+    margin-top: 2.5em;
+}
+
+.main-or-cart {
+    flex: 1 0 auto;
+}
+
+.left-sidebar-item {
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+}
+
+.left-sidebar-item:hover {
+    background-color: lightpink;
+}
+
+.left-sidebar-item a {
+    text-decoration: none;
+    color: #444;
+}
