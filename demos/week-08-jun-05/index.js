@@ -123,10 +123,8 @@ function updateTotalSidebar() {
 
 function increaseQty( itemId ) {
     findItemInCart( itemId ).qty++;
+    
     showCart();
-
-    console.log( getCartTotal() );
-
     updateTotalSidebar()
 }
 
@@ -155,6 +153,7 @@ function bindListeners() {
     const cartPage = document.querySelector( '.cart' );
     const mainSidebar = document.querySelector( '.main-sidebar' );
     const cartSidebar = document.querySelector( '.cart-sidebar' );
+    const checkoutButtons = document.querySelectorAll( '.checkout-button' );
 
     // console.log( addItemToCartButtons );
 
@@ -212,8 +211,8 @@ function bindListeners() {
         if( mainPage.classList.contains( 'd-none' ) ) {
             cartPage.classList.add( 'd-none' );
             cartSidebar.classList.add( 'd-none' );
-            mainPage.classList.remove( 'd-none' )
-            mainSidebar.classList.remove( 'd-none' )
+            mainPage.classList.remove( 'd-none' );
+            mainSidebar.classList.remove( 'd-none' );
         } else {
             if( cart.length === 0 ) {
                 alert( 'No items in the cart' );
@@ -222,10 +221,35 @@ function bindListeners() {
 
             cartPage.classList.remove( 'd-none' );
             cartSidebar.classList.remove( 'd-none' );
-            mainPage.classList.add( 'd-none' )
-            mainSidebar.classList.add( 'd-none' )
+            mainPage.classList.add( 'd-none' );
+            mainSidebar.classList.add( 'd-none' );
         }
     });
+
+    checkoutButtons.forEach(
+        button => {
+            button.addEventListener( 'click', function() {
+                // remove the fa-heart-selected
+                const items = document.querySelectorAll( '.fa-heart-selected' );
+                items.forEach(
+                    item => item.classList.remove( 'fa-heart-selected' )
+                );
+
+                cart = [];
+                cartCount.textContent = cart.length;
+                
+                showCart();
+                updateTotalSidebar();
+                
+                alert( 'Your order has been placed' );
+
+                cartPage.classList.add( 'd-none' );
+                cartSidebar.classList.add( 'd-none' );
+                mainPage.classList.remove( 'd-none' );
+                mainSidebar.classList.remove( 'd-none' );
+            });
+        }
+    )
 }
 
 bindListeners();
