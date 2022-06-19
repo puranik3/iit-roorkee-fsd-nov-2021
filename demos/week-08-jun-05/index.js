@@ -42,7 +42,7 @@ const showCategories = () => {
                 </div>
             `;
         }
-    )
+    );
 };
 
 const showItemsByCategory = () => {
