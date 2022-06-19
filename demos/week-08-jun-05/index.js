@@ -113,11 +113,21 @@ function showCart() {
     )
 }
 
+function updateTotalSidebar() {
+    const totalItemsEl = document.querySelector( '.total-items' );
+    const totalPriceEl = document.querySelector( '.total-price' );
+
+    totalItemsEl.textContent = cart.length;
+    totalPriceEl.textContent = getCartTotal();
+}
+
 function increaseQty( itemId ) {
     findItemInCart( itemId ).qty++;
     showCart();
 
     console.log( getCartTotal() );
+
+    updateTotalSidebar()
 }
 
 function decreaseQty( itemId ) {
@@ -129,6 +139,7 @@ function decreaseQty( itemId ) {
     }
     
     showCart();
+    updateTotalSidebar()
 }
 
 window.increaseQty = increaseQty;
@@ -142,6 +153,8 @@ function bindListeners() {
     const addressInner = document.querySelector( '.address-inner' );
     const mainPage = document.querySelector( '.main' );
     const cartPage = document.querySelector( '.cart' );
+    const mainSidebar = document.querySelector( '.main-sidebar' );
+    const cartSidebar = document.querySelector( '.cart-sidebar' );
 
     // console.log( addItemToCartButtons );
 
@@ -176,6 +189,7 @@ function bindListeners() {
                 cartCount.innerText = cart.length;
 
                 showCart();
+                updateTotalSidebar();
 
                 console.log( 'total = ', getCartTotal() );
             });
@@ -197,7 +211,9 @@ function bindListeners() {
         // Check the use of classList.toggle()
         if( mainPage.classList.contains( 'd-none' ) ) {
             cartPage.classList.add( 'd-none' );
+            cartSidebar.classList.add( 'd-none' );
             mainPage.classList.remove( 'd-none' )
+            mainSidebar.classList.remove( 'd-none' )
         } else {
             if( cart.length === 0 ) {
                 alert( 'No items in the cart' );
@@ -205,7 +221,9 @@ function bindListeners() {
             }
 
             cartPage.classList.remove( 'd-none' );
+            cartSidebar.classList.remove( 'd-none' );
             mainPage.classList.add( 'd-none' )
+            mainSidebar.classList.add( 'd-none' )
         }
     });
 }
