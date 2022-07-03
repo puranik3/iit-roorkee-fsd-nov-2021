@@ -17,7 +17,7 @@ const Login = () => {
                             >
                                 <Form.Label>Username</Form.Label>
                                 <Form.Control
-                                    type="email"
+                                    type="text"
                                     placeholder="Username"
                                 />
                             </Form.Group>
