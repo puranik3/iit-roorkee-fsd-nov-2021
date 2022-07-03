@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductsList from './ProductsList';
 import Cart from './Cart';
-import data from '../data';
 import IProduct from '../models/IProduct';
 
 const ShoppingCart = () => {

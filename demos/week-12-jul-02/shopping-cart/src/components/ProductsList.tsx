@@ -23,7 +23,9 @@ const ProductsList = ( { increaseQty } : Props ) => {
                                 <Card.Text>
                                     Rs. {product.price}
                                 </Card.Text>
-                                <Button variant="primary" onClick={() => increaseQty( product )}>
+                                <Button
+                                    variant="primary" onClick={() => increaseQty( product )}
+                                >
                                     Add
                                 </Button>
                             </Card.Body>
