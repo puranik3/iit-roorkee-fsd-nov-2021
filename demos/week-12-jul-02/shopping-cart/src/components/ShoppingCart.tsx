@@ -6,16 +6,7 @@ import data from '../data';
 import IProduct from '../models/IProduct';
 
 const ShoppingCart = () => {
-    const [ cart, setCart ] = useState<{ product: IProduct, qty: number }[]>( [
-        {
-            product: data.products[0],
-            qty: 1
-        },
-        {
-            product: data.products[1],
-            qty: 2
-        }
-    ] );
+    const [ cart, setCart ] = useState<{ product: IProduct, qty: number }[]>( [] );
 
     const increaseQty = ( product : IProduct ) => {
         const match = cart.find(
