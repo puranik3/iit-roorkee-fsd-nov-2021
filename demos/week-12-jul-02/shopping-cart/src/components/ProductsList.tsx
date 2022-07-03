@@ -16,7 +16,7 @@ const ProductsList = ( { increaseQty } : Props ) => {
             <Row xs={1} lg={4}>
                 {data.products.map((product) => (
                     <Col key={product.id} className="my-2 d-flex align-items-stretch">
-                        <Card>
+                        <Card className="w-100">
                             <Card.Img variant="top" src={product.image} />
                             <Card.Body>
                                 <Card.Title>{product.name}</Card.Title>

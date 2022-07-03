@@ -36,7 +36,29 @@ const ShoppingCart = () => {
 
             setCart( newCart );
         }
-    }
+    };
+
+    const decreasQty = ( product : IProduct ) => {
+        // neither filter nor map can achieve exactly what we want to in one go. So a normal forEach is chosen.
+        const newCart = [] as { product: IProduct, qty: number }[];
+
+        cart.forEach(
+            p => {
+                if( p.product.id !== product.id ) {
+                    newCart.push( p );
+                } else {
+                    if( p.qty !== 1 ) {
+                        newCart.push({
+                            product: p.product,
+                            qty: p.qty - 1
+                        });
+                    }
+                }
+            }
+        );
+
+        setCart( newCart );
+    };
 
     return (
         <Container className="my-4">
@@ -45,7 +67,11 @@ const ShoppingCart = () => {
                     <ProductsList increaseQty={increaseQty} />
                 </Col>
                 <Col xs={12} lg={3}>
-                    <Cart increaseQty={increaseQty} cart={cart} />
+                    <Cart
+                        increaseQty={increaseQty}
+                        decreaseQty={decreasQty}
+                        cart={cart}
+                    />
                 </Col>
             </Row>
         </Container>
