@@ -2,12 +2,18 @@ import { Row, Col, Card, Button } from 'react-bootstrap';
 
 import data from "../data";
 
-const ProductsList = () => {
+import IProduct from '../models/IProduct';
+
+type Props = {
+    increaseQty: ( product : IProduct ) => void
+}
+
+const ProductsList = ( { increaseQty } : Props ) => {
     return (
         <div>
             <h2>List of products</h2>
             <hr />
-            <Row xs={2} lg={4}>
+            <Row xs={1} lg={4}>
                 {data.products.map((product) => (
                     <Col key={product.id} className="my-2 d-flex align-items-stretch">
                         <Card>
@@ -17,7 +23,9 @@ const ProductsList = () => {
                                 <Card.Text>
                                     Rs. {product.price}
                                 </Card.Text>
-                                <Button variant="primary">Add</Button>
+                                <Button variant="primary" onClick={() => increaseQty( product )}>
+                                    Add
+                                </Button>
                             </Card.Body>
                         </Card>
                     </Col>
