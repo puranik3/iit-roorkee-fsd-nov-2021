@@ -41,7 +41,7 @@ const ShoppingCart = () => {
     return (
         <Container className="my-4">
             <Row>
-                <Col xs={1} lg={9}>
+                <Col xs={12} lg={9}>
                     <ProductsList increaseQty={increaseQty} />
                 </Col>
                 <Col xs={12} lg={3}>
