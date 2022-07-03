@@ -7,37 +7,33 @@ const Login = () => {
             style={{ height: "100vh" }}
         >
             <h2 className="mb-3">Login</h2>
-            <Card style={{ width: "18rem" }} className="p-3">
-                <Card.Body>
-                    <Card.Text>
-                        <Form>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="formBasicEmail"
-                            >
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Username"
-                                />
-                            </Form.Group>
+            <Card style={{ width: "20rem" }} className="p-4">
+                <Form>
+                    <Form.Group
+                        className="mb-3"
+                        controlId="formBasicEmail"
+                    >
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Username"
+                        />
+                    </Form.Group>
 
-                            <Form.Group
-                                className="mb-3"
-                                controlId="formBasicPassword"
-                            >
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control
-                                    type="password"
-                                    placeholder="Password"
-                                />
-                            </Form.Group>
-                            <Button variant="primary" type="submit">
-                                Login
-                            </Button>
-                        </Form>
-                    </Card.Text>
-                </Card.Body>
+                    <Form.Group
+                        className="mb-3"
+                        controlId="formBasicPassword"
+                    >
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Login
+                    </Button>
+                </Form>
             </Card>
         </div>
     );
