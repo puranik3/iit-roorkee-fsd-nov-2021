@@ -8,7 +8,7 @@ import {
     Modal,
     Form,
 } from "react-bootstrap";
-import { getItems } from "../services/items";
+import { getItems, addItem } from "../services/items";
 import IItem from "../models/IItem";
 
 const ExpenseTracker = () => {
@@ -55,21 +55,21 @@ const ExpenseTracker = () => {
     const productRef = useRef<HTMLInputElement>( null );
     const priceRef = useRef<HTMLInputElement>( null );
 
-    const addExpense = ( event : FormEvent<HTMLFormElement> ) => {
+    const addExpense = async ( event : FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
 
-        // EXERCISE: Create and setup refs for rest 2 inputs, and add to this object
         const expense = {
             payeeName: payeeNameRef?.current?.value as string,
             product: productRef?.current?.value as string,
             price: parseFloat( priceRef?.current?.value as string ) as number,
-            setDate: "2022-07-10" as String
+            setDate: (new Date()).toISOString().substring( 0, 10 ) as string
         } as Omit<IItem, 'id'>;
 
-        console.log( expense );
+        const updatedItem = await addItem( expense );
+        console.log( updatedItem );
 
         handleClose();
-    }
+    };
 
     return (
         <Container className="my-4">

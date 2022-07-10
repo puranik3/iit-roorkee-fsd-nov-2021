@@ -9,6 +9,17 @@ const getItems = async () => {
     return response.data; // 3. response goes back to caller
 };
 
+// async function will return a promise - the promise resolves with the value that is there in the return statement
+const addItem = async ( item : Omit<IItem, 'id'> ) => {
+    const response = await axios.post<IItem>( `${baseUrl}/items`, item, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    return response.data;
+};
+
 export {
-    getItems
+    getItems,
+    addItem
 };
