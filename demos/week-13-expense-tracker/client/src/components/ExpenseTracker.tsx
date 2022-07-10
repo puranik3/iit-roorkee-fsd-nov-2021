@@ -66,7 +66,11 @@ const ExpenseTracker = () => {
         } as Omit<IItem, 'id'>;
 
         const updatedItem = await addItem( expense );
-        console.log( updatedItem );
+        
+        setItems([
+            ...items,
+            updatedItem
+        ]);
 
         handleClose();
     };
