@@ -1,5 +1,13 @@
-import { useState, useEffect } from "react";
-import { Spinner, Alert, Container, Table, Button, Modal } from "react-bootstrap";
+import { useState, useEffect, useRef, FormEvent } from "react";
+import {
+    Spinner,
+    Alert,
+    Container,
+    Table,
+    Button,
+    Modal,
+    Form,
+} from "react-bootstrap";
 import { getItems } from "../services/items";
 import IItem from "../models/IItem";
 
@@ -39,31 +47,77 @@ const ExpenseTracker = () => {
     };
 
     const [show, setShow] = useState<boolean>(false);
-    
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const payeeNameRef = useRef<HTMLSelectElement>( null );
+
+    const addExpense = ( event : FormEvent<HTMLFormElement> ) => {
+        event.preventDefault();
+
+        // EXERCISE: Create and setup refs for rest 2 inputs, and add to this object
+        const expense = {
+            payeeName: payeeNameRef?.current?.value
+        };
+
+        console.log( expense );
+    }
 
     return (
         <Container className="my-4">
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Add an expense</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Woohoo, you're reading this text in a modal!
+                    <Form onSubmit={addExpense}>
+                        <Form.Group className="mb-3" controlId="payeeName">
+                            <Form.Label>Who paid?</Form.Label>
+                            <Form.Select aria-label="Payee name" ref={payeeNameRef}>
+                                <option>-- Select payee --</option>
+                                <option value="Rahul">Rahul</option>
+                                <option value="Ramesh">Ramesh</option>
+                            </Form.Select>
+                        </Form.Group>
+
+                        <Form.Group
+                            className="mb-3"
+                            controlId="product"
+                        >
+                            <Form.Label>For what?</Form.Label>
+                            <Form.Control
+                                type="text"
+                            />
+                        </Form.Group>
+
+                        <Form.Group
+                            className="mb-3"
+                            controlId="price"
+                        >
+                            <Form.Label>How much?</Form.Label>
+                            <Form.Control
+                                type="number"
+                                min="0"
+                            />
+                        </Form.Group>
+
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
+                        <Button variant="primary" type="submit">
+                            Add expense
+                        </Button>
+                    </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
             </Modal>
             <h1>
                 Expense Tracker
-                <Button variant="primary" className="float-end" onClick={handleShow}>
+                <Button
+                    variant="primary"
+                    className="float-end"
+                    onClick={handleShow}
+                >
                     Add expense
                 </Button>
             </h1>
