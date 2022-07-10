@@ -67,10 +67,12 @@ const ExpenseTracker = () => {
 
         const updatedItem = await addItem( expense );
         
-        setItems([
-            ...items,
-            updatedItem
-        ]);
+        setItems(
+            [
+                ...items,
+                updatedItem
+            ]
+        );
 
         handleClose();
     };
