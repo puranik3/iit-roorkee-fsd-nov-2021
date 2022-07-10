@@ -62,6 +62,8 @@ const ExpenseTracker = () => {
         };
 
         console.log( expense );
+
+        handleClose();
     }
 
     return (
