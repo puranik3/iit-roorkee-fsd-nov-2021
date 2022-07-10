@@ -52,14 +52,19 @@ const ExpenseTracker = () => {
     const handleShow = () => setShow(true);
 
     const payeeNameRef = useRef<HTMLSelectElement>( null );
+    const productRef = useRef<HTMLInputElement>( null );
+    const priceRef = useRef<HTMLInputElement>( null );
 
     const addExpense = ( event : FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
 
         // EXERCISE: Create and setup refs for rest 2 inputs, and add to this object
         const expense = {
-            payeeName: payeeNameRef?.current?.value
-        };
+            payeeName: payeeNameRef?.current?.value as string,
+            product: productRef?.current?.value as string,
+            price: parseFloat( priceRef?.current?.value as string ) as number,
+            setDate: "2022-07-10" as String
+        } as Omit<IItem, 'id'>;
 
         console.log( expense );
 
@@ -90,6 +95,7 @@ const ExpenseTracker = () => {
                             <Form.Label>For what?</Form.Label>
                             <Form.Control
                                 type="text"
+                                ref={productRef}
                             />
                         </Form.Group>
 
@@ -101,6 +107,7 @@ const ExpenseTracker = () => {
                             <Form.Control
                                 type="number"
                                 min="0"
+                                ref={priceRef}
                             />
                         </Form.Group>
 
